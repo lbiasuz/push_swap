@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 09:07:35 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/10 13:46:23 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/11 19:45:57 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ typedef struct s_dist
 	struct	s_dist *next;
 	struct	s_dist *prev;
 } t_dlist;
+
+typedef struct s_stkp
+{
+	int	integer;
+	int	index;
+	int	should_move;
+} t_stkp;
 
 int		main(int argc, char *argv[]);
 void	push(t_list **a, t_list **b);
