@@ -1,46 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mark.c                                             :+:      :+:    :+:   */
+/*   helper.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 22:34:28 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/13 22:33:24 by lbiasuz          ###   ########.fr       */
+/*   Created: 2022/12/13 22:20:43 by lbiasuz           #+#    #+#             */
+/*   Updated: 2022/12/13 22:34:09 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	mark_stack_index(t_list **list)
+int	checkpush(t_list **list)
 {
 	t_list	*aux;
-	t_list	*aux2;
 
-	aux = (*list)->next;
-	aux2 = *list;
 	while (aux)
 	{
-		if (((t_stkp *) aux2->content)->index < ((t_stkp *) aux->content)->index)
-			((t_stkp *) aux->content)->keep = 1;
-		else
-			((t_stkp *) aux->content)->keep = 0;
-		aux2 = aux;
+		if (((t_stkp *) aux->content)->keep = 0)
+			return (1);
 		aux = aux->next;
 	}
+	return (0);
 }
 
-void	mark_stack_pivot(t_list **list, t_stkp *pivot)
+int	keep_sum(t_list **list)
 {
-	t_list *aux;
+	t_list	*aux;
+	int cont;
 
-	aux = *list;
+	cont = 0;
 	while (aux)
 	{
-		if (((t_stkp *) aux->content)->integer > pivot->integer)
-			((t_stkp *) aux->content)->keep = 1;
-		else
-			((t_stkp *) aux->content)->keep = 0;
+		if (((t_stkp *) aux->content)->keep = 1)
+			cont++;
 		aux = aux->next;
 	}
+	return (cont);
 }
