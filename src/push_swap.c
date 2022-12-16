@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 13:53:55 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/13 22:35:07 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/15 22:36:01 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,20 @@ void	loop_and_mark(t_list **a, t_list **b)
 		else
 			rotate(a);
 	}
+}
+
+void	refill_stack(t_list **a, t_list **b)
+{
+	t_list	*aux;
+	int		distance;
+	
+	while (*b != NULL)
+	{
+		distance = find_distance(a, ((t_stkp *) (*b))->integer);
+		align_stack(distance);
+		push(b, a);
+	}
+	align_stack(a, 0);
 }
 
 void	error(void)
