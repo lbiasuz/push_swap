@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 22:20:43 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/15 22:33:35 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/16 22:40:50 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ int	checkpush(t_list **list)
 {
 	t_list	*aux;
 
+	aux = *list;
 	while (aux)
 	{
-		if (((t_stkp *) aux->content)->keep = 0)
+		if (((t_stkp *) aux->content)->keep == 0)
 			return (1);
 		aux = aux->next;
 	}
@@ -31,9 +32,10 @@ int	keep_sum(t_list **list)
 	int		cont;
 
 	cont = 0;
+	aux = *list;
 	while (aux)
 	{
-		if (((t_stkp *) aux->content)->keep = 1)
+		if (((t_stkp *) aux->content)->keep == 1)
 			cont++;
 		aux = aux->next;
 	}
@@ -79,4 +81,10 @@ void	align_stack(t_list **list, int index)
 		while (distance++ > 0)
 			rotate(list);
 	}
+}
+
+void	error(void)
+{
+	ft_printf("Error\n");
+	exit(1);
 }

@@ -4,7 +4,8 @@ CC		=	cc
 
 FLAGS	=	-Wall -Werror -Wextra -g3
 
-SRC		=	actions/push.c actions/swap.c actions/rotate.c
+SRC		=	src/actions/push.c src/actions/swap.c src/actions/rotate.c \
+			src/helper.c src/index.c src/init.c src/mark.c src/push_swap.c
 
 OUT		=	$(SRC:.c=.o)
 
@@ -16,6 +17,9 @@ $(NAME): $(DEPENDENCIES)
 	$(CC) $(FLAGS) $(SRC) $(DEPENDENCIES) -o $(NAME)
 
 all: $(NAME)
+
+$(DEPENDENCIES):
+	make -C libft/
 
 clean:
 	make -C libft/ clean

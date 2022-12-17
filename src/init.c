@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 19:18:39 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/11 19:48:57 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/16 22:49:35 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	checkinteger(char **argv)
 	while (argv[s])
 	{
 		i = 0;
-		while (argv[s][i] && (ft_strchr(argv[s][i], ' ') || ft_strchr(argv[s][i], '-')))
+		while (argv[s][i] && (argv[s][i] == ' ' || argv[s][i] == '-'))
 			i++;
 		if (!argv[s][i] || !ft_isdigit(argv[s][i]))
 			return (0);
@@ -57,13 +57,13 @@ t_list	*build_stack(char **argv)
 	t_stkp	*point;
 
 	s = 0;
-	point = (int *) malloc(sizeof(t_stkp));
+	point = (t_stkp *) malloc(sizeof(t_stkp));
 	point->integer = ft_atoi(argv[s]);
 	stk = ft_lstnew((void *) point);
 	s++;
 	while (argv[s])
 	{
-		point = (int *) malloc(sizeof(int));
+		point = (t_stkp *) malloc(sizeof(int));
 		point->integer = ft_atoi(argv[s]);
 		ft_lstadd_back(&stk, ft_lstnew((void *) point));
 		s++;
