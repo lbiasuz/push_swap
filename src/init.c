@@ -6,18 +6,18 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 19:18:39 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/16 22:49:35 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/17 09:56:53 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	checkinteger(char **argv)
+int	check_invalid_input(char **argv)
 {
 	int	s;
 	int	i;
 
-	s = 0;
+	s = 1;
 	while (argv[s])
 	{
 		i = 0;
@@ -30,17 +30,22 @@ int	checkinteger(char **argv)
 	return (1);
 }
 
-int	checkdup(char **argv)
+int	check_duplicate_input(char **argv)
 {
 	int	s;
 	int	i;
 
-	s = 0;
+	s = 1;
 	while (argv[s])
 	{
-		i = 0;
+		i = 1;
 		while (argv[i])
 		{
+			if (i == s)
+			{
+				i++;
+				continue;
+			}
 			if (ft_atoi(argv[i]) == ft_atoi(argv[s]))
 				return (0);
 			i++;

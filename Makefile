@@ -12,18 +12,18 @@ OUT		=	$(SRC:.c=.o)
 DEPENDENCIES	=	libft.a
 
 $(NAME): $(DEPENDENCIES)
-	make -C libft/ all
-	mv libft/libft.a libft.a
 	$(CC) $(FLAGS) $(SRC) $(DEPENDENCIES) -o $(NAME)
 
 all: $(NAME)
 
 $(DEPENDENCIES):
 	make -C libft/
+	mv libft/libft.a libft.a
 
 clean:
 	make -C libft/ clean
-	rm -f $(DEPENDENCIES)
 
-fclean: $(DEPENDENCIES)
+fclean: clean
 	rm -f push_swap
+
+re: fclean all
