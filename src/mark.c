@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 22:34:28 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/13 22:33:24 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/17 12:38:46 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ void	mark_stack_index(t_list **list)
 
 	aux = (*list)->next;
 	aux2 = *list;
+	if (!aux)
+		((t_stkp *) aux2->content)->index = 1;
 	while (aux)
 	{
+		if (((t_stkp *) aux->content)->index == 0)
+			((t_stkp *) aux->content)->keep = 1;
 		if (((t_stkp *) aux2->content)->index < ((t_stkp *) aux->content)->index)
 			((t_stkp *) aux->content)->keep = 1;
 		else

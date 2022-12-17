@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 22:20:43 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/16 22:40:50 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/17 12:31:25 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ int	keep_sum(t_list **list)
 	aux = *list;
 	while (aux)
 	{
-		if (((t_stkp *) aux->content)->keep == 1)
-			cont++;
+		cont += ((t_stkp *) aux->content)->keep;
 		aux = aux->next;
 	}
 	return (cont);
