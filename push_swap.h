@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 09:07:35 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/17 11:43:21 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/18 22:24:45 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ typedef struct s_stkp
 	int	integer;
 	int	index;
 	int	keep;
-} t_stkp;
+}	t_stkp;
 
 // Transfer to libft
-int ft_abs(int index);
+int		ft_abs(int index);
 
 int		main(int argc, char *argv[]);
 
@@ -33,7 +33,6 @@ void	swap(t_list **a);
 void	rotate(t_list **list);
 void	reverse_rotate(t_list **list);
 void	double_push(t_list **a, t_list **b);
-
 
 // Init validation
 int		check_invalid_input(char **argv);

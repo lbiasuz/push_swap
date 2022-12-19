@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 20:04:50 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/13 22:46:39 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/18 22:28:51 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	index_stack(t_list **list)
 	t_list	*aux;
 	t_stkp	*point;
 
-
 	aux = *list;
 	while (aux)
 	{
@@ -27,7 +26,7 @@ void	index_stack(t_list **list)
 	}
 }
 
-int		find_index(t_list **list, int i)
+int	find_index(t_list **list, int i)
 {
 	t_list	*aux;
 	int		cont;

@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 13:53:55 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/17 14:20:28 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/18 22:26:24 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(int argc, char *argv[])
 	t_list	*a;
 	t_list	*b;
 
+	b = NULL;
 	if (!check_invalid_input(argv) || !check_duplicate_input(argv))
 		error();
 	a = build_stack(&argv[1]);
@@ -24,17 +25,6 @@ int	main(int argc, char *argv[])
 	mark_stack_index(&a);
 	loop_and_mark(&a, &b);
 	refill_stack(&a, &b);
-	while (a)
-	{
-		ft_printf(
-			"int: %d i: %d k: %d\n",
-			((t_stkp *) a->content)->integer,
-			((t_stkp *) a->content)->index,
-			((t_stkp *) a->content)->keep
-		);
-		a = a->next;
-	}
-	ft_printf("argc: %d \n", argc);
 }
 
 void	loop_and_mark(t_list **a, t_list **b)
@@ -45,28 +35,40 @@ void	loop_and_mark(t_list **a, t_list **b)
 	{
 		keep = keep_sum(a);
 		swap(a);
-		mark_stack_index(a);
+		ft_printf("SA\n");
+		mark_stack_pivot(a, ((t_stkp *)(*a)->content));
 		if (keep < keep_sum(a))
 		{
 			swap(a);
-			mark_stack_index(a);
+			ft_printf("SA\n");
+			mark_stack_pivot(a, ((t_stkp *)(*a)->content));
 		}
-		else if (!((t_stkp *) (*a)->content)->keep)
+		else if (!((t_stkp *)(*a)->content)->keep)
+		{
 			push(a, b);
+			ft_printf("PA\n");
+		}
 		else
+		{
 			rotate(a);
+			ft_printf("RA\n");
+		}
 	}
 }
 
 void	refill_stack(t_list **a, t_list **b)
 {
 	int		distance;
-	
-	while (*b)
+	t_list	*aux;
+
+	aux = *b;
+	while (aux)
 	{
-		distance = find_distance(a, ((t_stkp *) (*b))->integer);
+		distance = find_distance(a, ((t_stkp *) aux)->integer);
 		align_stack(a, distance);
+		aux = aux->next;
 		push(b, a);
+		ft_printf("PB\n");
 	}
 	align_stack(a, 0);
 }

@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 22:20:43 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/17 12:31:25 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/18 22:31:28 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ int	find_distance(t_list **list, int index)
 	aux = *list;
 	while (aux)
 	{
-		if (ft_abs(((t_stkp *)aux->content)->index - index))
-			distance = ((t_stkp *)aux->content)->index;
+		if (ft_abs(((t_stkp *) aux->content)->index - index))
+			distance = ((t_stkp *) aux->content)->index;
 		aux = aux->next;
 	}
 	return (distance);
 }
 
-int ft_abs(int index)
+int	ft_abs(int index)
 {
 	if (index < 0)
 		return (index * -1);
@@ -70,15 +70,15 @@ void	align_stack(t_list **list, int index)
 
 	aux = *list;
 	distance = ((t_stkp *) aux->content)->index - index;
-	if (distance < 0)
+	while (distance-- < 0)
 	{
-		while (distance-- < 0)
-			reverse_rotate(list);
+		reverse_rotate(list);
+		// ft_printf("RR\n");
 	}
-	else if (distance > 0)
+	while (distance++ > 0)
 	{
-		while (distance++ > 0)
-			rotate(list);
+		rotate(list);
+		// ft_printf("R\n");
 	}
 }
 

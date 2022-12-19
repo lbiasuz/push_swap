@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 19:18:39 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/17 09:56:53 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/18 22:32:01 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	check_duplicate_input(char **argv)
 			if (i == s)
 			{
 				i++;
-				continue;
+				continue ;
 			}
 			if (ft_atoi(argv[i]) == ft_atoi(argv[s]))
 				return (0);
@@ -68,7 +68,7 @@ t_list	*build_stack(char **argv)
 	s++;
 	while (argv[s])
 	{
-		point = (t_stkp *) malloc(sizeof(int));
+		point = (t_stkp *) malloc(sizeof(t_stkp));
 		point->integer = ft_atoi(argv[s]);
 		ft_lstadd_back(&stk, ft_lstnew((void *) point));
 		s++;

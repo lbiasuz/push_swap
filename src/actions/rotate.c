@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 14:19:52 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/10 22:10:25 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/18 22:32:21 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	reverse_rotate(t_list **list)
 	start = *list;
 	temp = *list;
 	past = *list;
-	while(temp)
+	while (temp)
 	{
 		past = temp;
 		temp = temp->next;

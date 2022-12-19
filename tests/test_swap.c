@@ -6,13 +6,13 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 23:41:38 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/07 21:52:18 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/18 22:23:24 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int main(void)
+int	main(void)
 {
 	t_list	*a;
 
@@ -20,7 +20,6 @@ int main(void)
 	ft_lstadd_front(&a, ft_lstnew("50"));
 	ft_lstadd_front(&a, ft_lstnew("33"));
 	ft_lstadd_front(&a, ft_lstnew("9"));
-
 	swap(&a);
 	while (a)
 	{
