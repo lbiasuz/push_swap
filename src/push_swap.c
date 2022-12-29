@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 13:53:55 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/18 22:26:24 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/28 22:59:10 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(int argc, char *argv[])
 	mark_stack_index(&a);
 	loop_and_mark(&a, &b);
 	refill_stack(&a, &b);
+	return (argc > 0);
 }
 
 void	loop_and_mark(t_list **a, t_list **b)
@@ -36,14 +37,14 @@ void	loop_and_mark(t_list **a, t_list **b)
 		keep = keep_sum(a);
 		swap(a);
 		ft_printf("SA\n");
-		mark_stack_pivot(a, ((t_stkp *)(*a)->content));
+		mark_stack_index(a);
 		if (keep < keep_sum(a))
 		{
 			swap(a);
 			ft_printf("SA\n");
-			mark_stack_pivot(a, ((t_stkp *)(*a)->content));
+			mark_stack_index(a);
 		}
-		else if (!((t_stkp *)(*a)->content)->keep)
+		else if (!(stkp(*a))->keep)
 		{
 			push(a, b);
 			ft_printf("PA\n");
@@ -64,7 +65,7 @@ void	refill_stack(t_list **a, t_list **b)
 	aux = *b;
 	while (aux)
 	{
-		distance = find_distance(a, ((t_stkp *) aux)->integer);
+		distance = find_distance(a, stkp(aux)->integer);
 		align_stack(a, distance);
 		aux = aux->next;
 		push(b, a);

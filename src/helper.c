@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 22:20:43 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/18 22:31:28 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/28 22:56:20 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	checkpush(t_list **list)
 	aux = *list;
 	while (aux)
 	{
-		if (((t_stkp *) aux->content)->keep == 0)
+		if (stkp(aux)->keep == 0)
 			return (1);
 		aux = aux->next;
 	}
@@ -35,7 +35,7 @@ int	keep_sum(t_list **list)
 	aux = *list;
 	while (aux)
 	{
-		cont += ((t_stkp *) aux->content)->keep;
+		cont += (stkp(aux))->keep;
 		aux = aux->next;
 	}
 	return (cont);
@@ -49,8 +49,8 @@ int	find_distance(t_list **list, int index)
 	aux = *list;
 	while (aux)
 	{
-		if (ft_abs(((t_stkp *) aux->content)->index - index))
-			distance = ((t_stkp *) aux->content)->index;
+		if (ft_abs(stkp(aux)->index - index))
+			distance = stkp(aux)->index;
 		aux = aux->next;
 	}
 	return (distance);
@@ -69,7 +69,7 @@ void	align_stack(t_list **list, int index)
 	int		distance;
 
 	aux = *list;
-	distance = ((t_stkp *) aux->content)->index - index;
+	distance = stkp(aux)->index - index;
 	while (distance-- < 0)
 	{
 		reverse_rotate(list);

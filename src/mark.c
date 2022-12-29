@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 22:34:28 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/18 22:28:24 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/28 22:52:00 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,18 @@ void	mark_stack_index(t_list **list)
 
 	aux = (*list)->next;
 	aux2 = *list;
-	if (!aux
-		|| ((t_stkp *) aux2->content)->index < ((t_stkp *) aux->content)->index
-	)
-		((t_stkp *) aux2->content)->keep = 1;
+	if (!aux || stkp(aux2)->index < stkp(aux)->index)
+		stkp(aux2)->keep = 1;
 	else
-		((t_stkp *) aux2->content)->keep = 0;
+		stkp(aux2)->keep = 0;
 	while (aux)
 	{
-		if (((t_stkp *) aux->content)->index == 0)
-			((t_stkp *) aux->content)->keep = 1;
-		else if (
-			((t_stkp *) aux2->content)->index < ((t_stkp *) aux->content)->index
-		)
-			((t_stkp *) aux->content)->keep = 1;
+		if (stkp(aux)->index == 0)
+			stkp(aux)->keep = 1;
+		else if (stkp(aux2)->index < stkp(aux)->index)
+			stkp(aux)->keep = 1;
 		else
-			((t_stkp *) aux->content)->keep = 0;
+			stkp(aux)->keep = 0;
 		aux2 = aux;
 		aux = aux->next;
 	}
@@ -47,10 +43,10 @@ void	mark_stack_pivot(t_list **list, t_stkp *pivot)
 	aux = *list;
 	while (aux)
 	{
-		if (((t_stkp *) aux->content)->integer > pivot->integer)
-			((t_stkp *) aux->content)->keep = 1;
+		if (stkp(aux)->integer > pivot->integer)
+			stkp(aux)->keep = 1;
 		else
-			((t_stkp *) aux->content)->keep = 0;
+			stkp(aux)->keep = 0;
 		aux = aux->next;
 	}
 }

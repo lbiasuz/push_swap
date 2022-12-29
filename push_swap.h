@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 09:07:35 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/18 22:24:45 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2022/12/28 21:05:04 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	index_stack(t_list **list);
 int		find_index(t_list **list, int i);
 void	mark_stack_index(t_list **list);
 void	mark_stack_pivot(t_list **list, t_stkp *pivot);
+t_stkp	*stkp(t_list *list);
 void	error(void);
 
 #endif
