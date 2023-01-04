@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 13:53:55 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/04 06:45:09 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/04 07:50:21 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,23 @@ int	main(int argc, char *argv[])
 	// loop_and_mark(&a, &b);
 	// refill_stack(&a, &b);
 	return (argc > 0);
+}
+
+int		is_sorted(t_list **a, int stop)
+{
+	int	i;
+	t_list	*aux;
+
+	i = 0;
+	aux = *a;
+	while (aux && i < stop)
+	{
+		if (stkp(aux)->index != 0)
+			return (0);
+		i++;
+		aux = aux->next;
+	}
+	return (1);
 }
 
 void	sort_size_3(t_list **a)
