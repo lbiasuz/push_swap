@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 13:53:55 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/04 07:50:21 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/05 07:30:57 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,12 @@ int	main(int argc, char *argv[])
 		error();
 	a = build_stack(&argv[1]);
 	index_stack(&a);
-	sort_size_3(&a);
+	if (ft_lstsize(a) <= 3)
+		sort_size_3(&a);
+	else if (ft_lstsize(a) <= 4)
+		sort_size_4(&a);
+	else if (ft_lstsize <= 5)
+		sort_size_5(&a);
 	// loop_and_mark(&a, &b);
 	// refill_stack(&a, &b);
 	return (argc > 0);
@@ -37,22 +42,12 @@ int		is_sorted(t_list **a, int stop)
 	aux = *a;
 	while (aux && i < stop)
 	{
-		if (stkp(aux)->index != 0)
+		if (stkp(aux)->index != i)
 			return (0);
 		i++;
 		aux = aux->next;
 	}
 	return (1);
-}
-
-void	sort_size_3(t_list **a)
-{
-	if (stkp(*a)->index == ft_lstsize(*a) - 1)
-		reverse_rotate(a);
-	else if (stkp((*a)->next)->index == ft_lstsize(*a) - 1)
-		rotate(a);
-	if (stkp((*a)->next)->index == stkp(*a)->index - 1)
-		swap(a);
 }
 
 // void	loop_and_mark(t_list **a, t_list **b)
@@ -85,19 +80,19 @@ void	sort_size_3(t_list **a)
 	// }
 // }
 
-void	refill_stack(t_list **a, t_list **b)
-{
-	int		distance;
-	t_list	*aux;
+// void	refill_stack(t_list **a, t_list **b)
+// {
+// 	int		distance;
+// 	t_list	*aux;
 
-	aux = *b;
-	while (aux)
-	{
-		distance = find_distance(a, stkp(aux)->integer);
-		align_stack(a, distance);
-		aux = aux->next;
-		push(b, a);
-		ft_printf("PB\n");
-	}
-	align_stack(a, 0);
-}
+// 	aux = *b;
+// 	while (aux)
+// 	{
+// 		distance = find_distance(a, stkp(aux)->integer);
+// 		align_stack(a, distance);
+// 		aux = aux->next;
+// 		push(b, a);
+// 		ft_printf("PB\n");
+// 	}
+// 	align_stack(a, 0);
+// }

@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 19:18:39 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/03 07:38:46 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/05 07:31:20 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,7 @@ t_list	*build_stack(char **argv)
 	t_stkp	*point;
 
 	s = 0;
-	point = (t_stkp *) malloc(sizeof(t_stkp));
-	point->integer = ft_atoi(argv[s]);
-	stk = ft_lstnew((void *) point);
-	s++;
+	stk = NULL;
 	while (argv[s])
 	{
 		point = (t_stkp *) malloc(sizeof(t_stkp));
