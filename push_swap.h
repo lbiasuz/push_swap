@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 09:07:35 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/04 22:02:58 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/06 06:39:46 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,9 @@ void	mark_stack_pivot(t_list **list, t_stkp *pivot);
 t_stkp	*stkp(t_list *list);
 void	error(void);
 
+int		is_sorted(t_list **a, int size);
 void	sort_size_3(t_list **a);
 void	sort_size_4(t_list **a);
+void	sort_size_5(t_list **a, t_list **b);
 
 #endif
