@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 13:53:55 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/06 07:09:21 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/10 07:21:42 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	main(int argc, char *argv[])
 	if (ft_lstsize(a) <= 3)
 		sort_size_3(&a);
 	else if (ft_lstsize(a) <= 4)
-		sort_size_4(&a);
+		sort_size_5(&a, &b);
 	else if (ft_lstsize(a) <= 5)
 		sort_size_5(&a, &b);
-	return (argc > 0);
+	return (argc < 0);
 }
 
 int		is_sorted(t_list **a, int stop)

@@ -6,13 +6,15 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 20:58:30 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/28 21:04:39 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/10 06:45:46 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stkp	*stkp(t_list *list)
+t_stkp *stkp(t_list *list)
 {
-	return ((t_stkp *) list->content);
+	if (!list)
+		return (NULL);
+	return ((t_stkp *)list->content);
 }
