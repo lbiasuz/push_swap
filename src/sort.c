@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 06:49:11 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/10 07:16:50 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/13 07:39:17 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,43 +18,35 @@ void sort_size_3(t_list **a)
 		reverse_rotate(a);
 	else if (stkp((*a)->next)->index == ft_lstsize(*a) - 1)
 		rotate(a);
-	if (stkp((*a)->next)->index == stkp(*a)->index - 1)
+	if (stkp((*a)->next)->index < stkp(*a)->index)
 		swap(a);
-}
-
-void sort_size_4(t_list **a)
-{
-	while (!is_sorted(a, 4))
-	{
-		if (stkp((*a)->next)->index == stkp(*a)->index - 1)
-			swap(a);
-		else
-			rotate(a);
-	}
 }
 
 void sort_size_5(t_list **a, t_list **b)
 {
-	while (!is_sorted(a, ft_lstsize(*a)))
+	while (ft_lstsize(*a) > 3)
+		push(a, b);
+	sort_size_3(a);
+	if (ft_lstsize(*b) > 1)
+		sort_size_3(b);
+	while (ft_lstsize(*b) > 0)
 	{
-		if (stkp((*a)->next)->index == stkp(*a)->index - 1)
-			swap(a);
 		if (
-			ft_abs(stkp((*a)->next)->index - stkp(*a)->index) > 1 && ft_abs(stkp(ft_lstlast(*a))->index - stkp(*a)->index) > 1)
-			push(a, b);
-		else if (*b)
-		{
-			if (stkp(*b)->index == stkp(*a)->index - 1)
-				push(b, a);
-		}
-		if (is_sorted(&(*a)->next, ft_lstsize(*a) - 1))
-			reverse_rotate(a);
-		else
+			stkp(*a)->index != stkp(*b)->index + 1 
+			&& stkp(*b)->index < ft_lstsize(*a)
+			)
 			rotate(a);
+		else
+			push(b, a);
 	}
-	if (ft_lstsize(*b) > 0)
+	if (stkp(*a)->index < ft_lstsize(*a) / 2)
 	{
-		push(b, a);
-		reverse_rotate(a);
+		while (stkp(*a)->index != 0)
+			reverse_rotate(a);
+	} 
+	else
+	{
+		while (stkp(*a)->index != 0)
+			rotate(a);
 	}
 }

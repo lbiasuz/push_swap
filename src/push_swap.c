@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 13:53:55 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/10 07:21:42 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/13 07:39:11 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ int	main(int argc, char *argv[])
 	index_stack(&a);
 	if (ft_lstsize(a) <= 3)
 		sort_size_3(&a);
-	else if (ft_lstsize(a) <= 4)
-		sort_size_5(&a, &b);
 	else if (ft_lstsize(a) <= 5)
 		sort_size_5(&a, &b);
 	return (argc < 0);
