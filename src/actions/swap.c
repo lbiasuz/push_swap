@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 16:40:07 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/06 21:49:21 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/17 07:24:33 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,4 @@ void	swap(t_list **list)
 	content = (*list)->next->content;
 	(*list)->next->content = (*list)->content;
 	(*list)->content = content;
-	ft_printf("SWAP\n");
 }

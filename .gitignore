@@ -2,3 +2,5 @@
 
 *.o
 *.a
+
+push_swap_visualizer/

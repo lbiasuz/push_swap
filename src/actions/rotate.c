@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 14:19:52 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/06 21:48:53 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/17 07:16:21 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	rotate(t_list **list)
 	past->next = NULL;
 	(*list) = temp;
 	temp->next = start;
-	ft_printf("ROTATE\n");
 }
 
 void	reverse_rotate(t_list **list)
@@ -49,5 +48,4 @@ void	reverse_rotate(t_list **list)
 	(*list) = (*list)->next;
 	past->next = start;
 	start->next = NULL;
-	ft_printf("REVERSE ROTATE\n");
 }
