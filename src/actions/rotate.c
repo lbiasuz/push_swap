@@ -6,13 +6,13 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 14:19:52 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/17 07:16:21 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/18 06:29:51 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	rotate(t_list **list)
+void	reverse_rotate(t_list **list)
 {
 	t_list	*start;
 	t_list	*temp;
@@ -31,7 +31,7 @@ void	rotate(t_list **list)
 	temp->next = start;
 }
 
-void	reverse_rotate(t_list **list)
+void	rotate(t_list **list)
 {
 	t_list	*start;
 	t_list	*temp;

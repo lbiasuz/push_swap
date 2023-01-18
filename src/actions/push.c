@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 17:28:47 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/17 07:24:38 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/18 06:46:24 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,4 @@ void	push(t_list **src, t_list **dest)
 	temp->next = *dest;
 	*dest = temp;
 	*src = hold;
-	ft_printf("PUSH\n");
 }
