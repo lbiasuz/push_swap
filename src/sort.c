@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 06:49:11 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/19 09:27:50 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/20 07:56:54 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,22 @@ void sort_size_3(t_list **a)
 
 void sort_size_3ish(t_list **a)
 {
-	if (stkp(*a)->index > stkp(ft_lstlast(*a))->index
-		&& stkp(*a)->index > stkp((*a)->next)->index)
-	{
-		rotate(a);
-		ft_printf("ra\n");
-	}
-	else if (stkp(*a)->index < stkp(ft_lstlast(*a))->index
-		&& stkp(*a)->index < stkp((*a)->next)->index
-		&& stkp(ft_lstlast(*a))->index < stkp((*a)->next)->index)
-	{
-		reverse_rotate(a);
-		ft_printf("rra\n");
-	}
-	if (stkp(*a)->index < stkp(ft_lstlast(*a))->index
-		&& stkp(*a)->index > stkp((*a)->next)->index
+	if (stkp(*a)->index == stkp((*a)->next)->index + 1
+		|| stkp(*a)->index == stkp((*a)->next)->index - 2
 		)
 	{
 		swap(a);
 		ft_printf("sa\n");
+	}
+	if (stkp(*a)->index == stkp((*a)->next)->index - 1)
+	{
+		reverse_rotate(a);
+		ft_printf("rra\n");
+	}
+	if (stkp(*a)->index == stkp((*a)->next)->index + 2)
+	{
+		rotate(a);
+		ft_printf("ra\n");
 	}
 }
 
