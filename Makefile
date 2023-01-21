@@ -23,6 +23,7 @@ $(DEPENDENCIES):
 
 clean:
 	make -C libft/ clean
+	rm -f libft.a
 
 fclean: clean
 	rm -f push_swap

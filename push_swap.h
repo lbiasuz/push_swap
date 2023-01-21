@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 09:07:35 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/21 12:02:03 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 13:08:44 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,10 @@ int		ft_abs(int index);
 int		main(int argc, char *argv[]);
 
 // Actions
-void	push(t_list **a, t_list **b);
-void	swap(t_list **a);
-void	rotate(t_list **list);
-void	reverse_rotate(t_list **list);
-void	double_push(t_list **a, t_list **b);
+void	push(t_list **a, t_list **b, char c);
+void	swap(t_list **a, char c);
+void	rotate(t_list **list, char c);
+void	reverse_rotate(t_list **list, char c);
 
 // Init validation
 int		check_invalid_input(char **argv);
