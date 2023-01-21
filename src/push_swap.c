@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 13:53:55 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/21 11:55:16 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 12:01:53 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,4 @@ int	main(int argc, char *argv[])
 	else
 		radix_sort(&a, &b);
 	return (argc < 0);
-}
-
-int	is_sorted(t_list **a, int stop)
-{
-	int		i;
-	t_list	*aux;
-
-	i = 0;
-	aux = *a;
-	while (aux && i < stop)
-	{
-		if (stkp(aux)->index != i)
-			return (0);
-		i++;
-		aux = aux->next;
-	}
-	return (1);
 }

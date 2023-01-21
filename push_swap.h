@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 09:07:35 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/21 11:58:29 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 12:02:03 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,11 @@ int		check_invalid_input(char **argv);
 int		check_duplicate_input(char **argv);
 t_list	*build_stack(char **argv);
 
-void	loop_and_mark(t_list **a, t_list **b);
-void	refill_stack(t_list **a, t_list **b);
-int		checkpush(t_list **list);
-int		keep_sum(t_list **list);
-int		find_distance(t_list **list, int index);
 void	index_stack(t_list **list);
 int		find_index(t_list **list, int i);
-void	mark_stack_index(t_list **list);
-void	mark_stack_pivot(t_list **list, t_stkp *pivot);
 t_stkp	*stkp(t_list *list);
 void	error(void);
 
-int		is_sorted(t_list **a, int size);
 void	sort_size_3(t_list **a);
 void	sort_size_5(t_list **a, t_list **b);
 void	radix_sort(t_list **a, t_list **b);
