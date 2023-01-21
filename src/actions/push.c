@@ -6,28 +6,13 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 17:28:47 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/18 06:46:24 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 13:06:31 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void	double_push(t_list **a, t_list **b)
-{
-	t_list	*temp;
-	t_list	*tempa;
-	t_list	*tempb;
-
-	tempa = *a;
-	tempb = *b;
-	temp = tempb->next;
-	tempb->next = tempa->next;
-	tempa->next = temp;
-	a = &tempb;
-	b = &tempa;
-}
-
-void	push(t_list **src, t_list **dest)
+void	push(t_list **src, t_list **dest, char c)
 {
 	t_list	*temp;
 	t_list	*hold;
@@ -37,4 +22,5 @@ void	push(t_list **src, t_list **dest)
 	temp->next = *dest;
 	*dest = temp;
 	*src = hold;
+	ft_printf("p%c\n", c);
 }
