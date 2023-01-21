@@ -6,11 +6,17 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 06:49:11 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/21 13:13:47 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 16:51:56 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	sort_size_2(t_list **a)
+{
+	if (stkp(*a)->index > stkp((*a)->next)->index)
+		swap(a, 'a');
+}
 
 void	sort_size_3(t_list **a)
 {
