@@ -6,13 +6,13 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 06:49:11 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/21 11:50:39 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 11:58:00 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void sort_size_3(t_list **a)
+void	sort_size_3(t_list **a)
 {
 	if (stkp(*a)->index == ft_lstsize(*a) - 1)
 	{
@@ -31,11 +31,11 @@ void sort_size_3(t_list **a)
 	}
 }
 
-void sort_size_3ish(t_list **a)
+void	sort_size_3ish(t_list **a)
 {
 	if (stkp(*a)->index == stkp((*a)->next)->index + 1
 		|| stkp(*a)->index == stkp((*a)->next)->index - 2
-		)
+	)
 	{
 		swap(a);
 		ft_printf("sa\n");
@@ -52,7 +52,7 @@ void sort_size_3ish(t_list **a)
 	}
 }
 
-void sort_size_5(t_list **a, t_list **b)
+void	sort_size_5(t_list **a, t_list **b)
 {
 	int	lstsize;
 
@@ -74,9 +74,9 @@ void sort_size_5(t_list **a, t_list **b)
 	while (ft_lstsize(*b) > 0)
 	{
 		if (
-			stkp(*a)->index != stkp(*b)->index + 1 
+			stkp(*a)->index != stkp(*b)->index + 1
 			&& stkp(*b)->index < ft_lstsize(*a)
-			)
+		)
 		{
 			rotate(a);
 			ft_printf("ra\n");
@@ -94,7 +94,7 @@ void sort_size_5(t_list **a, t_list **b)
 	}
 }
 
-void radix_sort(t_list **a, t_list **b)
+void	radix_sort(t_list **a, t_list **b)
 {
 	int	l;
 	int	s;
@@ -107,7 +107,7 @@ void radix_sort(t_list **a, t_list **b)
 		s = ft_lstsize(*a);
 		while (s > 0)
 		{
-			if ((stkp(*a)->index >> l)&1)
+			if ((stkp(*a)->index >> l) & 1)
 			{
 				rotate(a);
 				ft_printf("ra\n");

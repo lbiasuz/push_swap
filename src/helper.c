@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/13 22:20:43 by lbiasuz           #+#    #+#             */
-/*   Updated: 2022/12/28 22:56:20 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 11:58:45 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,25 +61,6 @@ int	ft_abs(int index)
 	if (index < 0)
 		return (index * -1);
 	return (index);
-}
-
-void	align_stack(t_list **list, int index)
-{
-	t_list	*aux;
-	int		distance;
-
-	aux = *list;
-	distance = stkp(aux)->index - index;
-	while (distance-- < 0)
-	{
-		reverse_rotate(list);
-		// ft_printf("RR\n");
-	}
-	while (distance++ > 0)
-	{
-		rotate(list);
-		// ft_printf("R\n");
-	}
 }
 
 void	error(void)

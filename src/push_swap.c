@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 13:53:55 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/21 09:47:45 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 11:55:16 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int	main(int argc, char *argv[])
 	return (argc < 0);
 }
 
-int		is_sorted(t_list **a, int stop)
+int	is_sorted(t_list **a, int stop)
 {
-	int	i;
+	int		i;
 	t_list	*aux;
 
 	i = 0;

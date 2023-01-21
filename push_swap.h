@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 09:07:35 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/21 11:41:28 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 11:58:29 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	refill_stack(t_list **a, t_list **b);
 int		checkpush(t_list **list);
 int		keep_sum(t_list **list);
 int		find_distance(t_list **list, int index);
-void	align_stack(t_list **list, int index);
 void	index_stack(t_list **list);
 int		find_index(t_list **list, int i);
 void	mark_stack_index(t_list **list);
@@ -57,5 +56,4 @@ void	sort_size_3(t_list **a);
 void	sort_size_5(t_list **a, t_list **b);
 void	radix_sort(t_list **a, t_list **b);
 int		digit_lenght(int i);
-int		largest_number(t_list **a);
 #endif
