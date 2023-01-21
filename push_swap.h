@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 09:07:35 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/12 07:45:25 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 11:41:28 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ void	error(void);
 
 int		is_sorted(t_list **a, int size);
 void	sort_size_3(t_list **a);
-void	sort_size_4(t_list **a, t_list **b);
 void	sort_size_5(t_list **a, t_list **b);
-
+void	radix_sort(t_list **a, t_list **b);
+int		digit_lenght(int i);
+int		largest_number(t_list **a);
 #endif

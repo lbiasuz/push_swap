@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 20:58:30 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/20 22:46:26 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 11:52:12 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,23 @@ int	digit_lenght(int i)
 	int	r;
 
 	r = 0;
-	while (i / 10 > 0)
-	{
-		i = i / 10;
+	while (i >> r != 0)
 		r++;
-	}
 	return (r);
+}
+
+int	largest_number(t_list **a)
+{
+	int	i;
+	t_list	*aux;
+
+	aux = *a;
+	i = stkp(aux)->index;
+	while (aux->next)
+	{
+		if (stkp(aux)->index > i)
+			i = stkp(aux)->index;
+		aux = aux->next;
+	}
+	return (i);
 }

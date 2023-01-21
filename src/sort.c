@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 06:49:11 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/20 23:09:01 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 11:50:39 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,33 +97,32 @@ void sort_size_5(t_list **a, t_list **b)
 void radix_sort(t_list **a, t_list **b)
 {
 	int	l;
-	int	s; 
-	t_list	*aux;
+	int	s;
+	int	d;
 
 	l = 0;
-	while (l < digit_leght(s) - 1)
+	d = digit_lenght(ft_lstsize(*a) - 1);
+	while (l < d)
 	{
-		aux = *a;
 		s = ft_lstsize(*a);
 		while (s > 0)
 		{
-			if ((stkp(aux)->index >> l)&1)
+			if ((stkp(*a)->index >> l)&1)
 			{
+				rotate(a);
 				ft_printf("ra\n");
-				rotate(*a);
 			}
 			else
 			{
-				ft_printf("pb\n");
 				push(a, b);
+				ft_printf("pb\n");
 			}
-			aux = aux->next;
 			s--;
 		}
 		while (ft_lstsize(*b) > 0)
 		{
-			ft_printf("pa\n");
 			push(b, a);
+			ft_printf("pa\n");
 		}
 		l++;
 	}
