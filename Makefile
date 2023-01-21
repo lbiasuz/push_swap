@@ -5,8 +5,7 @@ CC		=	cc
 FLAGS	=	-Wall -Werror -Wextra -g3
 
 SRC		=	src/actions/push.c src/actions/swap.c src/actions/rotate.c \
-			src/helper.c src/index.c src/init.c src/push_swap.c src/utils.c \
-			src/sort.c
+			src/helper.c src/index.c src/init.c src/push_swap.c src/sort.c
 
 OUT		=	$(SRC:.c=.o)
 
