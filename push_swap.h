@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 09:07:35 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/21 13:08:44 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 16:30:39 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,12 @@ t_list	*build_stack(char **argv);
 void	index_stack(t_list **list);
 int		find_index(t_list **list, int i);
 t_stkp	*stkp(t_list *list);
+void	freestkp(void *stkp);
 void	error(void);
 
 void	sort_size_3(t_list **a);
 void	sort_size_5(t_list **a, t_list **b);
 void	radix_sort(t_list **a, t_list **b);
 int		digit_lenght(int i);
+
 #endif

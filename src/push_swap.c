@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 13:53:55 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/21 12:01:53 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 16:31:26 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ int	main(int argc, char *argv[])
 		sort_size_5(&a, &b);
 	else
 		radix_sort(&a, &b);
+	ft_lstclear(&a, freestkp);
+	ft_lstclear(&b, freestkp);
 	return (argc < 0);
 }

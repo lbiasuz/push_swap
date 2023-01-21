@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 20:58:30 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/21 12:04:43 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 16:29:38 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ t_stkp	*stkp(t_list *list)
 	if (!list)
 		return (NULL);
 	return ((t_stkp *)list->content);
+}
+
+void	freestkp(void *stkp)
+{
+	free(stkp);
 }
 
 int	digit_lenght(int i)
