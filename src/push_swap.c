@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 13:53:55 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/21 16:31:26 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/21 16:39:52 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,18 @@ int	main(int argc, char *argv[])
 	t_list	*b;
 
 	b = NULL;
+	if (argc < 3)
+		return (0);
 	if (!check_invalid_input(argv) || !check_duplicate_input(argv))
 		error();
 	a = build_stack(&argv[1]);
 	index_stack(&a);
-	if (ft_lstsize(a) <= 3)
+	if (ft_lstsize(a) <= 2)
+	{
+		if (stkp(a)->index > stkp(a->next)->index)
+			swap(&a, 'a');
+	}
+	else if (ft_lstsize(a) <= 3)
 		sort_size_3(&a);
 	else if (ft_lstsize(a) <= 5)
 		sort_size_5(&a, &b);
@@ -30,5 +37,5 @@ int	main(int argc, char *argv[])
 		radix_sort(&a, &b);
 	ft_lstclear(&a, freestkp);
 	ft_lstclear(&b, freestkp);
-	return (argc < 0);
+	return (0);
 }
