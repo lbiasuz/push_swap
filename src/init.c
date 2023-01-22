@@ -6,11 +6,41 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/10 19:18:39 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/21 17:35:36 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/22 13:30:13 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+static int	ft_isspace(char c)
+{
+	if (c == '\f' || c == '\n'
+		|| c == '\r' || c == '\t'
+		|| c == '\v' || c == ' ')
+		return (1);
+	return (0);
+}
+
+long	ft_atol(const char *nptr)
+{
+	long	i;
+	long	n;
+
+	i = 0;
+	n = 1;
+	while (ft_isspace(*nptr))
+		nptr++;
+	if (*nptr == '-')
+		n = -1;
+	if (*nptr == '-' || *nptr == '+')
+		nptr++;
+	while (ft_isdigit(*nptr))
+	{
+		i = (i * 10) + (*nptr - 48);
+		nptr++;
+	}
+	return (i * n);
+}
 
 int	check_invalid_input(char **argv)
 {
@@ -24,6 +54,8 @@ int	check_invalid_input(char **argv)
 		while (argv[s][i] && (argv[s][i] == ' ' || argv[s][i] == '-'))
 			i++;
 		if (!argv[s][i] || !ft_isdigit(argv[s][i]))
+			return (0);
+		if (ft_atol(argv[s]) > 2147483647 || ft_atol(argv[s]) < -2147483648)
 			return (0);
 		s++;
 	}
