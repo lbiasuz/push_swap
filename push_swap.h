@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 09:07:35 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/22 14:33:05 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/23 09:20:44 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int		check_invalid_input(char **argv);
 int		check_duplicate_input(char **argv);
 t_list	*build_stack(char **argv);
 int		is_sorted(t_list **list);
-
 
 void	index_stack(t_list **list);
 int		find_index(t_list **list, int i);
