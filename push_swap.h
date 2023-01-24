@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 09:07:35 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/23 09:20:44 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/24 07:51:11 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,8 @@ void	sort_size_3(t_list **a);
 void	sort_size_5(t_list **a, t_list **b);
 void	radix_sort(t_list **a, t_list **b);
 
+void	push_bonus(t_list **a, t_list **b);
+void	swap_bonus(t_list **a);
+void	rotate_bonus(t_list **list);
+void	reverse_rotate_bonus(t_list **list);
 #endif
