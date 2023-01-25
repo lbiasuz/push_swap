@@ -39,3 +39,5 @@ $(NAME_B): $(DEPENDENCIES)
 	$(CC) $(FLAGS) $(SRC_B) $(DEPENDENCIES) -o $(NAME_B)
 
 bonus: $(NAME_B)
+
+bonus_re: fclean all $(NAME_B)

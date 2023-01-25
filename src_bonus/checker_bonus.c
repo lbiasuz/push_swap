@@ -6,7 +6,7 @@
 /*   By: lbiasuz <lbiasuz@student.42sp.org.br>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 07:06:40 by lbiasuz           #+#    #+#             */
-/*   Updated: 2023/01/24 07:56:07 by lbiasuz          ###   ########.fr       */
+/*   Updated: 2023/01/25 06:58:00 by lbiasuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,8 @@ void	perform(char *action, t_list **a, t_list **b)
 		else if (ft_strncmp(action, "rra", 3) == 0)
 			reverse_rotate_bonus(a);
 		else
-		{
-			ft_lstclear(a, freestkp);
-			ft_lstclear(b, freestkp);
-			error();
-		}
+			return ;
+		free(action);
 		action = get_next_line(0);
 	}
 }
